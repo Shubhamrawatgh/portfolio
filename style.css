@@ -682,10 +682,17 @@ footer p {
 
     .nav-right {
         position: static;
+        gap: 0.5rem; /* Reduce gap on mobile */
     }
     
     .nav-toggle {
         display: block;
+    }
+
+    .theme-switch-wrapper {
+        width: 40px;
+        height: 40px;
+        justify-content: center;
     }
 
     .nav-menu {
