@@ -676,6 +676,14 @@ footer p {
 
 /* ==== RESPONSIVE DESIGN ==== */
 @media (max-width: 992px) {
+    .nav-container {
+        justify-content: flex-end;
+    }
+
+    .nav-right {
+        position: static;
+    }
+    
     .nav-toggle {
         display: block;
     }
