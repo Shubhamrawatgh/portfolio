@@ -102,16 +102,14 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    /* The backdrop-filter was removed from here for performance */
-    background: rgba(10, 10, 16, 0.9); /* Adjusted opacity for a similar feel */
+    background: rgba(10, 10, 16, 0.9);
     border-bottom: 1px solid var(--glass-border);
     z-index: 1000;
     height: var(--nav-height);
 }
 
 [data-theme="light"] .main-nav {
-     /* The backdrop-filter was removed from here for performance */
-    background: rgba(240, 242, 245, 0.9); /* Adjusted opacity for a similar feel */
+    background: rgba(240, 242, 245, 0.9);
 }
 
 
@@ -235,7 +233,6 @@ a:hover {
 /* ==== GLASSMORPHISM CARD STYLE ==== */
 .glass-tile, .skill-tile, .contact-form {
     background: var(--glass-bg);
-    /* The backdrop-filter was removed from here for performance */
     border: 1px solid var(--glass-border);
     border-radius: 15px;
     padding: 2rem;
@@ -545,7 +542,6 @@ a:hover {
 }
 
 /* ==== FOOTER SECTION ==== */
-/* ==== FOOTER SECTION (Updated with Colored Icons) ==== */
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -616,6 +612,7 @@ footer p {
     font-size: 0.9rem;
     color: var(--secondary-text-color);
 }
+
 
 /* ==== SCROLL TO TOP BUTTON ==== */
 #scrollToTopBtn {
@@ -700,6 +697,8 @@ footer p {
         font-size: 2rem;
     }
 }
+/* Add this to your style.css file */
+
 .ai-enthusiast-gradient {
   background-image: linear-gradient(
     -225deg,
@@ -724,5 +723,3 @@ footer p {
     background-position: 200% center;
   }
 }
-
-
