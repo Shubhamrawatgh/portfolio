@@ -608,7 +608,7 @@ footer {
 .social-icon-svg {
     height: 1.8rem;
     width: 1.8rem;
-    fill: #FFD21E; /* Official Hugging Face yellow */
+    /* The 'fill' property is removed to let the SVG use its own colors */
 }
 
 footer p {
@@ -724,4 +724,5 @@ footer p {
     background-position: 200% center;
   }
 }
+
 
