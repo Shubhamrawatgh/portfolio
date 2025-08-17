@@ -545,6 +545,7 @@ a:hover {
 }
 
 /* ==== FOOTER SECTION ==== */
+/* ==== FOOTER SECTION (Updated with Colored Icons) ==== */
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -572,28 +573,42 @@ footer {
 }
 
 .social-links a {
-    font-size: 1.8rem;
+    font-size: 1.9rem; /* Slightly larger for better visibility */
     margin: 0 1rem;
-    color: var(--secondary-text-color);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    color: var(--secondary-text-color); /* Fallback color */
+    transition: transform 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
-    text-shadow: 0 0 10px var(--accent-glow);
+    transform: translateY(-2px); /* Simple lift effect on hover */
 }
 
+/* Brand Colors for Icons */
+.social-links .fa-youtube { color: #FF0000; }
+.social-links .fa-linkedin { color: #0077B5; }
+
+/* Let X and GitHub use the theme's text color for better contrast */
+.social-links .fa-x-twitter,
+.social-links .fa-github {
+    color: var(--primary-text-color);
+}
+
+/* Instagram Gradient */
+.social-links .fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Hugging Face SVG Icon */
 .social-icon-svg {
     height: 1.8rem;
     width: 1.8rem;
-    fill: currentColor;
-    transition: filter 0.3s ease;
-}
-
-.social-links a:hover .social-icon-svg {
-    filter: drop-shadow(0 0 8px var(--accent-glow));
+    fill: #FFD21E; /* Official Hugging Face yellow */
 }
 
 footer p {
@@ -685,8 +700,6 @@ footer p {
         font-size: 2rem;
     }
 }
-/* Add this to your style.css file */
-
 .ai-enthusiast-gradient {
   background-image: linear-gradient(
     -225deg,
@@ -711,3 +724,4 @@ footer p {
     background-position: 200% center;
   }
 }
+
