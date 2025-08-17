@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('is-active');
+            navToggle.classList.toggle('is-active'); // Add this line
         });
 
         // Close menu when a link is clicked
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', () => {
                 if (navMenu.classList.contains('is-active')) {
                     navMenu.classList.remove('is-active');
+                    navToggle.classList.remove('is-active'); // Add this line
                 }
             });
         });
