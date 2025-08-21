@@ -438,7 +438,7 @@ footer {
         border-bottom: 1px solid var(--card-border);
     }
 
-    .nav-menu.active {
+    .nav-menu.is-active {
         transform: translateY(0);
     }
 
@@ -458,15 +458,8 @@ footer {
         font-size: 2.5rem;
     }
 }
-<style>
-/* ====== ADDITIVE ENHANCEMENTS (append to end of style.css) ====== */
 
-
-/* Fix: support JS toggled class name `.is-active` for mobile menu */
-@media (max-width: 768px) {
-.nav-menu.is-active { transform: translateY(0); }
-}
-
+/* ====== ADDITIVE ENHANCEMENTS ====== */
 
 /* Animate hamburger into X when active */
 .nav-toggle.is-active .nav-toggle-bar:nth-child(1){ transform: translateY(8px) rotate(45deg); }
@@ -494,4 +487,3 @@ footer {
 .cmdk-box{ width: min(720px, 92vw); background: var(--card-background); border: 1px solid var(--card-border); border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,.35); padding: 16px; }
 #cmdk-input{ width: 100%; padding: 14px 16px; background: transparent; border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-color); font-size: 1rem; }
 #cmdk-results{ margin: 12px 4px 6px; list-style: none; max-height: 42vh; overflow: auto; border-radius: 10px; border: 1px solid var(--card-border); }
-</style>
