@@ -120,56 +120,25 @@ body {
     background-color: var(--background-color);
 }
 
-.hero::before,
-.hero::after {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.7;
-}
-
-.hero::before {
-    width: 50vw;
-    height: 50vw;
-    max-width: 500px;
-    max-height: 500px;
-    background: radial-gradient(circle, rgba(0, 255, 150, 0.4), transparent 70%);
-    top: -10%;
-    left: -20%;
-    animation: move-glow-1 20s infinite alternate ease-in-out;
-}
-
-.hero::after {
-    width: 60vw;
-    height: 60vw;
-    max-width: 600px;
-    max-height: 600px;
-    background: radial-gradient(circle, rgba(0, 170, 255, 0.5), transparent 70%);
-    bottom: -15%;
-    right: -25%;
-    animation: move-glow-2 25s infinite alternate ease-in-out;
-}
-
 .hero-content {
     position: relative;
     z-index: 2;
 }
 
-@keyframes move-glow-1 {
-    from { transform: translate(0, 0) scale(1) rotate(0deg); }
-    to { transform: translate(100px, 50px) scale(1.2) rotate(20deg); }
+/* Page Header for subpages */
+.page-header {
+    padding-top: calc(var(--nav-height) + 60px);
+    padding-bottom: 60px;
+    text-align: center;
 }
 
-@keyframes move-glow-2 {
-    from { transform: translate(0, 0) scale(1) rotate(0deg); }
-    to { transform: translate(-80px, -40px) scale(0.8) rotate(-30deg); }
+.page-header h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
 }
-
 
 /* Skills Section */
-.skills-section, .projects-section, .contact-section {
+.skills-section, .projects-section, .contact-section, .projects-page-section {
     padding: 80px 0;
 }
 
@@ -483,5 +452,9 @@ footer {
 
     .hero .subtitle {
         font-size: 1.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
     }
 }
