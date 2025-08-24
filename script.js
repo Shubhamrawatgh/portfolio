@@ -86,9 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // ==== CONTACT FORM VALIDATION ====
+    // ==== CONTACT FORM VALIDATION & POPUP ====
     const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
+    const popup = document.getElementById('thank-you-popup');
+    const closePopupButton = document.getElementById('close-popup');
+
+    if (contactForm && popup && closePopupButton) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -107,8 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            alert('Thank you for your message! I will get back to you soon.');
+            popup.style.display = 'flex';
+            setTimeout(() => popup.classList.add('show'), 10);
             contactForm.reset();
+        });
+        
+        closePopupButton.addEventListener('click', () => {
+            popup.classList.remove('show');
+            setTimeout(() => popup.style.display = 'none', 300);
         });
     }
 
@@ -135,8 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* Starfield background (respect reduce motion) */
+    const backgroundAnimation = document.querySelector('.background-animation');
     const canvas = document.getElementById('stars-canvas');
-    if (canvas) {
+    if (canvas && backgroundAnimation) {
         const ctx = canvas.getContext('2d');
         let stars = [], w=0,h=0, animId;
         const rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -152,8 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             animId = requestAnimationFrame(step);
         };
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > window.innerHeight / 2) {
+                backgroundAnimation.classList.add('visible');
+            } else {
+                backgroundAnimation.classList.remove('visible');
+            }
+        });
+
         window.addEventListener('resize', resize);
-        resize(); if(!rm) step();
+        resize();
+        if(!rm) step();
     }
 
 
