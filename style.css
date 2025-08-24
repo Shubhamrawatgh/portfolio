@@ -1,5 +1,5 @@
 /* Basic Setup */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;4_00;500;700;900&display=swap');
 
 :root {
     --primary-color: #00aaff;
@@ -117,7 +117,7 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
-    background-color: var(--background-color);
+    background-color: var(--background-color); /* MODIFIED THIS LINE */
 }
 
 .hero-content {
@@ -137,7 +137,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Sections */
+/* Skills Section */
 .skills-section, .projects-section, .contact-section, .projects-page-section {
     padding: 80px 0;
 }
@@ -166,61 +166,17 @@ h2::after {
     gap: 30px;
 }
 
-/* --- START: Uiverse Card Effect --- */
-@keyframes move {
-  0% {
-    transform: translateY(-150%);
-  }
-  100% {
-    transform: translateY(150%);
-  }
+.skill-tile {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
-.skill-tile,
-.project-card {
-  position: relative;
-  overflow: hidden;
-  background-color: rgba(40, 40, 40, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.2) inset;
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 10px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-[data-theme="light"] .skill-tile,
-[data-theme="light"] .project-card {
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 2px 4px 16px 0px rgba(0, 0, 0, 0.06) inset;
-}
-
-.skill-tile::before,
-.project-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1px;
-  height: 150%; 
-  background: linear-gradient(to bottom, transparent, var(--primary-color), transparent);
-  animation: move 3s linear infinite;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.skill-tile:hover::before,
-.project-card:hover::before {
-  opacity: 1;
-}
-/* --- END: Uiverse Card Effect --- */
-
 
 .skill-tile:hover {
     transform: translateY(-10px);
@@ -280,6 +236,15 @@ h2::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+}
+
+.project-card {
+    background: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s;
 }
 
 .project-card:hover {
